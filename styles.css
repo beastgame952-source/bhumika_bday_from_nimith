@@ -320,6 +320,67 @@ body {
 .final-message p {
     font-size: 22px;
     color: #333;
+    margin-bottom: 30px;
+}
+
+/* Video Button Styles */
+.video-btn {
+    position: relative;
+    padding: 20px 45px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+    transition: all 0.3s ease;
+    animation: videoButtonPulse 2.5s infinite;
+    overflow: hidden;
+}
+
+.video-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.video-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.video-btn:hover {
+    transform: scale(1.08) translateY(-3px);
+    box-shadow: 0 15px 45px rgba(102, 126, 234, 0.6);
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.video-btn:active {
+    transform: scale(1.02) translateY(-1px);
+}
+
+@keyframes videoButtonPulse {
+    0%, 100% {
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+    }
+    50% {
+        box-shadow: 0 10px 40px rgba(118, 75, 162, 0.6), 0 0 20px rgba(102, 126, 234, 0.3);
+    }
+}
+
+.video-icon {
+    margin-right: 10px;
+    font-size: 26px;
+    vertical-align: middle;
 }
 
 /* Responsive Design */
@@ -358,5 +419,18 @@ body {
     
     .photo-image {
         height: 280px;
+    }
+    
+    .final-message h3 {
+        font-size: 28px;
+    }
+    
+    .final-message p {
+        font-size: 18px;
+    }
+    
+    .video-btn {
+        font-size: 18px;
+        padding: 16px 35px;
     }
 }
